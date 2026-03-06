@@ -1,12 +1,15 @@
 // Only one source for the prototype
-const CLUBS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTTaIvJMKiGTh83EYB8I-R0xkxZ8RZlqDO1Ckt3uwGa8jto-6c0bfKoFtGzU8zy6RJUcdrWextjiH_u/pub?gid=600669760&single=true&output=csv';
 
+const encoded = "aHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvZS8yUEFDWC0xdlRUYUl2Sk1LaUdUaDgzRVlCOEktUjB4a3haOFJabHFETzFDa3QzdXdHYThqdG8tNmMwYmZLb0Z0R3pVOHp5NlJKVWNkcldleHRqaUhfdS9wdWI/Z2lkPTYwMDY2OTc2MCZzaW5nbGU9dHJ1ZSZvdXRwdXQ9Y3N2";
 let resources = [];
 
 /**
  * 1. INITIALIZE: Fetch only the Clubs data
  */
 async function init() {
+    const CLUBS_URL = atob(encoded);
+
+    const response = await fetch(CLUBS_URL);
     const grid = document.getElementById('sections-wrapper');
     grid.innerHTML = "<div class='loader'>Loading Civic Clubs...</div>";
 
