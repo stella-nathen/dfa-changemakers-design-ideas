@@ -1,0 +1,355 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --nyu-violet: #57068c;
+    --nyu-dark: #330662;
+    --light-grey: #f4f4f9;
+    --text-main: #333;
+    --border-color: #ddd;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-grey);
+    color: var(--text-main);
+}
+
+/* --- Navigation --- */
+.navbar {
+    background: var(--nyu-violet);
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.quiz-btn {
+    background: var(--white);
+    color: var(--nyu-violet) !important;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.quiz-btn:hover {
+    background: var(--nyu-dark);
+    color: white !important;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: var(--nyu-dark);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- Main Layout Container --- */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* --- Sidebar Filters --- */
+.filters {
+    flex: 1;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--nyu-violet);
+}
+
+.checkbox-list label {
+    font-weight: normal;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+select,
+#search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+#reset-filters {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: 1px solid var(--nyu-violet);
+    color: var(--nyu-violet);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* --- Content & Grid --- */
+.content {
+    flex: 3;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* --- Resource Cards --- */
+.card {
+    background: var(--white);
+    border-top: 5px solid var(--nyu-violet);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.view-btn {
+    text-decoration: none;
+    color: var(--nyu-violet);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .filters {
+        position: static;
+    }
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Space between logo and text */
+}
+
+.nav-logo {
+    height: 45px;
+    /* Adjust this based on your image size */
+    width: auto;
+    /* Keeps the image from stretching */
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.resource-section {
+    margin-bottom: 50px;
+}
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-divider h2 {
+    color: var(--nyu-violet);
+    font-size: 1.8rem;
+    white-space: nowrap;
+    margin-right: 20px;
+}
+
+.section-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #e0e0e0;
+    /* The light grey line */
+}
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.placeholder-text {
+    color: #888;
+    font-style: italic;
+    grid-column: 1 / -1;
+    /* Makes text stretch across the whole grid */
+}
+/* --- About Section --- */
+.about-section {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.about-section h1 {
+    color: var(--nyu-violet);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.7;
+}
+
+/* --- Directory Index (Future Modules) --- */
+.directory-index {
+    margin-top: 60px;
+}
+
+.index-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.index-item {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 2px dashed var(--border-color); /* Dashed border implies "Coming Soon" */
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.index-item i {
+    font-size: 2rem;
+    color: #aaa; /* Muted color for non-active items */
+    margin-bottom: 15px;
+}
+
+.index-item h3 {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.index-item p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* --- Search Bar Tweaks --- */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+#search-btn {
+    background: var(--nyu-violet);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+#search-btn:hover {
+    background: var(--nyu-dark);
+}
+
+.filter-feedback {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
